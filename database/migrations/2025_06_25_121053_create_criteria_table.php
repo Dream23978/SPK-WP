@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table ->string("kode_alternatif")->nullable();
             $table ->string("nama_alternatif")->nullable();
-            $table ->integer("C1")->default();
-            $table ->integer("C2")->default();
-            $table ->integer("C3")->default();
-            $table ->integer("C4")->default();
-            $table ->integer("C5")->default();
+            $table ->integer("C1")->default(1);
+            $table ->integer("C2")->default(1);
+            $table ->integer("C3")->default(1);
+            $table ->integer("C4")->default(1);
+            $table ->integer("C5")->default(1);
             $table->timestamps();
         });
     }

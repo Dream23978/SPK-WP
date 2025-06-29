@@ -21,44 +21,46 @@ class AlterskorResource extends Resource
     protected static ?string $model = Alterskor::class;
     protected static ?string $label = ' nilai alternatif';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-swatch';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-
                 Select::make('kode_alternatif')
-                ->options([
-                    'A1' => 'A1',
-                    'A2' => 'A2',
-                    'A3' => 'A3',
-                    'A4' => 'A4',
-                    'A5' => 'A5',  ])
-                      ->searchable()
-                      ->native(false),
+                    ->options([
+                        'A1' => 'A1',
+                        'A2' => 'A2',
+                        'A3' => 'A3',
+                        'A4' => 'A4',
+                        'A5' => 'A5',
+                    ])
+                    ->searchable()
+                    ->native(false),
 
-
-                textInput::make('nama_alternatif')
+                TextInput::make('nama_alternatif')
                     ->required(),
 
-                textInput::make('C1')
-                ->required(),
+                TextInput::make('C1')
+                    ->numeric()
+                    ->required(),
 
-                textInput::make('C2')
-                ->required(),
+                TextInput::make('C2')
+                    ->numeric()
+                    ->required(),
 
-                textInput::make('C3')
-                ->required(),
+                TextInput::make('C3')
+                    ->numeric()
+                    ->required(),
 
-                textInput::make('C4')
-                ->required(),
+                TextInput::make('C4')
+                    ->numeric()
+                    ->required(),
 
-                textInput::make('C5')
-                ->required(),
-
+                TextInput::make('C5')
+                    ->numeric()
+                    ->required(),
             ]);
-
     }
 
     public static function table(Table $table): Table
@@ -66,38 +68,35 @@ class AlterskorResource extends Resource
         return $table
             ->columns([
                 TextColumn::make("nama_alternatif")
-                ->label("Nama Alternatif")
-                ->sortable()
-                ->searchable(),
+                    ->label("Nama Alternatif")
+                    ->sortable()
+                    ->searchable(),
 
                 TextColumn::make('kode_alternatif')
-                ->sortable()
-                ->searchable(),
+                    ->sortable()
+                    ->searchable(),
 
                 TextColumn::make('C1')
-                ->sortable()
-                ->searchable(),
+                    ->sortable()
+                    ->searchable(),
+
                 TextColumn::make('C2')
-                ->sortable()
-                ->searchable(),
+                    ->sortable()
+                    ->searchable(),
+
                 TextColumn::make('C3')
-                ->sortable()
-                ->searchable(),
+                    ->sortable()
+                    ->searchable(),
+
                 TextColumn::make('C4')
-                ->sortable()
-                ->searchable(),
+                    ->sortable()
+                    ->searchable(),
+
                 TextColumn::make('C5')
-                ->sortable()
-                ->searchable(),
-
-
-
-
-
+                    ->sortable()
+                    ->searchable(),
             ])
-            ->filters([
-                //
-            ])
+            ->filters([])
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
@@ -111,9 +110,7 @@ class AlterskorResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array

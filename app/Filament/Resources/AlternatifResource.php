@@ -18,9 +18,9 @@ use Filament\Tables\Actions\Action;
 class AlternatifResource extends Resource
 {
     protected static ?string $model = Alternatif::class;
-    protected static ?string $label = '1. Bobot Kriteria';
-    protected static ?string $navigationLabel = '1.Isi Skor';
-    protected static ?string $navigationIcon = 'heroicon-o-calculator';
+    protected static ?string $label = 'Bobot Kriteria';
+    protected static ?string $navigationLabel = 'Pembobotan Kriteria';
+    protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-bottom-center-text';
 
     public static function form(Form $form): Form
     {

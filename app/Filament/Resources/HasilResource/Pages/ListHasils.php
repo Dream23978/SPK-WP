@@ -10,10 +10,12 @@ class ListHasils extends ListRecords
 {
     protected static string $resource = HasilResource::class;
 
-    protected function getHeaderActions(): array
-    {
-        return [
-            Actions\CreateAction::make(),
-        ];
-    }
+    
+
+    // protected function getHeaderActions(): array
+    // {
+    //     // return [
+    //     //     Actions\CreateAction::make(),
+    //     // ];
+    // }
 }
